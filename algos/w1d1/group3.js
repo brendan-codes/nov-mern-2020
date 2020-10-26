@@ -8,7 +8,21 @@
 // swap them if the item on the left is larger than the item on the right
 // continue until array is fully sorted
 
-function bubbleSort(arr) {}
+function bubbleSort(arr) {
+    for(var x=0;x<arr.length;x++)
+    {
+        for(var y=0;y<arr.length - 1 - x;y++)
+        {
+            if(arr[y]>arr[y+1])
+            {
+                var z= arr[y]
+                arr[y]=arr[y+1]
+                arr[y+1]=z
+            }
+        }
+    }
+    return arr;
+}
 
 
 // Time Complexity
@@ -32,7 +46,24 @@ function bubbleSort(arr) {}
 // This continues until all values are sorted.
 
 
-function selectionSort(arr) {}
+function selectionSort(arr) {
+
+    for(var x=0;x<arr.length;x++)
+    {
+        var storedplace=x;
+        for(var y=x;y<arr.length;y++)
+        {
+            if(arr[storedplace]>arr[y])
+            {
+                storedplace=y;
+            }
+        }
+        var temp=arr[x]
+        arr[x]=arr[storedplace]
+        arr[storedplace]=temp
+    }
+    return arr;
+}
 
 
 

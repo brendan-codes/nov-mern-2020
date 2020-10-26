@@ -8,7 +8,24 @@
 // swap them if the item on the left is larger than the item on the right
 // continue until array is fully sorted
 
-function bubbleSort(arr) {}
+function bubbleSort(arr) {
+  let sorted;
+  if (sorted==undefined){
+    sorted = false;
+  }
+  while(sorted==false) {
+    sorted = true;
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j]>arr[j+1]){
+        sorted = false;
+        let temp=arr[j]
+        arr[j] = arr[j+1]
+        arr[j+1] = temp
+      }
+    }
+  }
+  return arr
+}
 
 
 // Time Complexity
@@ -32,8 +49,24 @@ function bubbleSort(arr) {}
 // This continues until all values are sorted.
 
 
-function selectionSort(arr) {}
+function selectionSort(arr) {
+  for(let i=0; i<arr.length;i++){
+    let min = arr[i]
+    let minI=i
+    for(let j=i+1; j<arr.length;j++){
+      if(min>arr[j]){
+        min=arr[j]
+        minI=j
+      }
+    }
+    let temp = arr[i]
+    arr[i] = min
+    arr[minI]=temp
+  }
+  return arr
+}
 
+console.log(selectionSort([1,5,2,7,9,10,3]))
 
 
 

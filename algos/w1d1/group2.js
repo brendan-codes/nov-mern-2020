@@ -1,3 +1,4 @@
+// Group#2 - Kristen San Martin, Daniel Havens, Santos, Kim G
 // MERN Algos Week 1 - Sorting Algorithms
 // https://www.bigocheatsheet.com/
 
@@ -8,8 +9,21 @@
 // swap them if the item on the left is larger than the item on the right
 // continue until array is fully sorted
 
-function bubbleSort(arr) {}
+function bubbleSort(arr) {
+    for(let i = 0; i < arr.length; i++){
+        for (let j = 0; j < arr.length-i ; j++){
+            if (arr[j] > arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
 
+arr = [3,9,5,1,0,10]
+bubbleSort(arr);
+console.log(arr);
 
 // Time Complexity
 // - BEST: n when array is sorted
@@ -31,8 +45,46 @@ function bubbleSort(arr) {}
 // finding the next minimum value and move it to index 1.
 // This continues until all values are sorted.
 
+let arr = [3, 5, 1, 45, 39, 0]
+//arr = [0, 5,1,45,39,3]
+// arr =[0,3,5,1,45,39]
+//     =[0, ]
+function selectionSort(arr) {
+for(i = 0; i< arr.length; i++){
+    let min = arr[i];
+    let temp = min
+    for (j = 0; j < arr.length; j++){
+    let pos = j;
+        if(arr[j] < min){
+            min = arr[j];
+        }
+    }
 
-function selectionSort(arr) {}
+
+
+
+
+}
+
+}
+
+/*
+arr = [8,5,2,6,9,3,4,7,1]
+
+for j in range (len(arr)-1):
+    pos = j
+    min = arr[j]
+
+    for i in range(j+1,len(arr)):
+        if arr[i] < min:
+            min = arr[i]
+            pos = i
+    arr[j],arr[pos] = arr[pos], arr[j]
+
+print(arr)
+
+
+*/
 
 
 

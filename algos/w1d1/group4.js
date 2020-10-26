@@ -1,3 +1,7 @@
+//Josh Cornell
+// Dallas Martinez
+// Young Binpaek
+// Josiah (develeven)
 // MERN Algos Week 1 - Sorting Algorithms
 // https://www.bigocheatsheet.com/
 
@@ -8,8 +12,22 @@
 // swap them if the item on the left is larger than the item on the right
 // continue until array is fully sorted
 
-function bubbleSort(arr) {}
+function bubbleSort(arr) {
+    var temp=arr[0];
 
+    for (i=0; i<arr.length; i++) {
+        for(var j=1; j < arr.length-1; j++){
+            if (arr[j]>arr[j+1]) {
+                temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    return arr;
+}
+TestArray = [5,7,6,9];
+console.log(bubbleSort(TestArray));
 
 // Time Complexity
 // - BEST: n when array is sorted
