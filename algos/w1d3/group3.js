@@ -24,7 +24,7 @@ function mergeSort(arr) {
   if(arr.length<1){
     return arr
   }
-  if(arr.length=1){
+  if(arr.length==1){
     return arr
   }
   let m=Math.floor((arr.length/2))
