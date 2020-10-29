@@ -1,16 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import Example from './components/Example';
+import Counters from './components/Counter/Counters';
+import NewExample from './components/Functional/NewExample';
+// import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
-        <h1>Hello world!</h1>
-      </header>
+      <h1>Hello this app component!</h1>
+      {/* <Example name="Brendan" number={10}/> */}
+      {/* <Counters /> */}
+      <NewExample />
     </div>
   );
 }
