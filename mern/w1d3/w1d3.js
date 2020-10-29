@@ -117,6 +117,7 @@ function doStuff(number, arr, callback){
     callback // () => {} anonymous function
 }
 
-doStuff(22, [], () => {});
+doStuff(22, [], (x) => { return 20 });
+doStuff(22, [], x => 20 ); // implicit return
+doStuff(22, [], function(x){ return 20 });
 
-numbers.map
