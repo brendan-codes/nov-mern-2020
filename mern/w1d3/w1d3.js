@@ -102,3 +102,21 @@ console.log(pokemon.map(nameTest));
 
 var flyingSecondaries = pokemon.filter(object => object.types[1] === "flying");
 console.log(flyingSecondaries.map(nameTest));
+
+
+
+
+
+
+//              arguement
+let ten = 10;
+function doStuff(number, arr, callback){
+
+    number // 22
+    arr // []
+    callback // () => {} anonymous function
+}
+
+doStuff(22, [], () => {});
+
+numbers.map
