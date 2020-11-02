@@ -3,7 +3,7 @@ import Color from './Color';
 
 
 
-const Colors = ({colors, deleteColor}) => {
+const Colors = ({colors, deleteColor, updateCompleted}) => {
 
     return (
         <div>
@@ -15,6 +15,7 @@ const Colors = ({colors, deleteColor}) => {
                             color={val}
                             idx={idx}
                             deleteColor={deleteColor}
+                            updateCompleted={updateCompleted}
                         />
                     </section>
                 )
