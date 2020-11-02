@@ -14,10 +14,10 @@ const NewExample = (props) => {
     // implicit return vs return
     // rest and spread operators
     // destructuring
-    // jsx
     // callbacks
     // function programming (map, filter)
 
+    // jsx
 
 
     return ( // jsx
