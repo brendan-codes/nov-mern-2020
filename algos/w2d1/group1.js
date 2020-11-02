@@ -22,7 +22,7 @@ const intersectSorted = (arr1, arr2) => {
     }
     return output;
 }
-console.log(intersectSorted([1, 2, 2,6, 7], [2, 2, 6, 7, 8]));
+console.log(intersectSorted([1, 2, 2, 6, 7], [2, 2, 6, 7, 8]));
 
 // inputs are always to be sorted
 // not the same length

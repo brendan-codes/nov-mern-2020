@@ -60,7 +60,7 @@ function IntersectSortedArrays2(arr1, arr2) {
         }
     }
 
-    return newSet;
+    return Array.from(newSet);
 }
 console.log(IntersectSortedArrays2(arr1, arr2))
 

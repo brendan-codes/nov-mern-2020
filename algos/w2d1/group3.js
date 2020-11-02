@@ -43,8 +43,8 @@ function intersect(arr1, arr2) {
 function intersect2(arr1, arr2) {
     if (arr1.length === 0 || arr2.length === 0) return [];
 
-    let uniqueSet1 = new Set(arr1);
-    let uniqueSet2 = new Set(arr2);
+    let uniqueSet1 = new Set(arr1); // (1, 2, 7)
+    let uniqueSet2 = new Set(arr2); // (2, 6, 7)
 
     let sorted = []
     for (value of uniqueSet1) {
