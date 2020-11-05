@@ -26,6 +26,7 @@ function twoSums(nums_arr, target) {
             }
         }
     }
-    return [];
+    return "there is no solution";
 }
+
 console.log([2, 7, 11, 15],9);

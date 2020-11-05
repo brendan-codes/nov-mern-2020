@@ -60,4 +60,4 @@ function twoSums(nums, target) {
     return null;
 }
 
-console.log(twoSums(nums, target))
+console.log(twoSums(nums, target));

@@ -36,8 +36,19 @@ function twoSums(nums, target) {
     }
 }
 
+
+
+
+
+
+
+
 function twoSumBetter(nums, target) {
     const map = {};
+    // ""email"" => hashing method => 834791293
+    // [834791291, 834791293, 834791292]
+
+    // {6: 0, 8: 1, 2: 2}
 
     for (let i = 0; i < nums.length; i++) {
         let missingNumber = target - nums[i];
