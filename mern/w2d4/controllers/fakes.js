@@ -2,6 +2,7 @@ const Fake = require("../models/Fake")
 
 module.exports = {
     create: (req, res) => {
+        console.log(req);
         res.json({message: "You have created a fake!", fake: new Fake()});
     },
 
