@@ -26,7 +26,14 @@ const output = [
 // Object.keys(instance)
 // functional (.map .filter)
 
-function findObjectsFilter(search, items) {}
+function findObjectsFilter(search, items) {
+    let searchkeys = Object.keys(search)
+    items.map((obj, i) => {
+       console.log(obj.firstName);
+       obj.searchkeys[0]
+    })
+
+}
 
 
 

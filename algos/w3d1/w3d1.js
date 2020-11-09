@@ -6,8 +6,7 @@
 // given searchFor and items
 const searchFor = {
     firstName: "Bob",
-    age: 31,
-    space: true
+    age: 31
 };
 
 const items = [
@@ -37,7 +36,7 @@ function findObjectsFilter(search, items) {
         // for every key in searchKeys
         for (const key of searchKeys) {
             // if the key doesn't exist
-            if (!item.hasOwnProperty(key) || item[key] !== searchFor[key]) {
+            if (!item.hasOwnProperty(key) || item[key] !== search[key]) {
                 return false;
             }
         }
@@ -103,7 +102,27 @@ const students = [{
 // Input: 5, {}, students
 // Output: null
 
-function findByIdAndUpdate(id, updatedVals, collection) {}
+function findByIdAndUpdate(id, updatedVals, collection) {
+    // separate the keys
+    const keys = Object.keys(updatedVals);
+
+    // loop over the collection and look at each document
+    for (const item of collection) {
+        // match ids
+        if (item.id === id) {
+            // loop through our keys
+            for (const key of keys) {
+                // only update keys that exist on the found object
+                if (item.hasOwnProperty(key)) {
+                    item[key] = updatedVals[key];
+                }
+            }
+            return item;
+        }
+    }
+    // above return didn't run so nothing was found
+    return null;
+}
 
 // Object.hasOwnProperty
 // Object.keys(instance)

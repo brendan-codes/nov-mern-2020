@@ -26,7 +26,23 @@ const output = [
 // Object.keys(instance)
 // functional (.map .filter)
 
-function findObjectsFilter(search, items) {}
+function findObjectsFilter(searchFor, items) {
+    let keys = Object.keys(searchFor);
+    return items.filter((obj) => {
+        let correct = false;
+        for (key in keys) {
+            if (!obj.hasOwnProperty(key)) {
+                return null;
+            }
+            if (obj[key] == searchFor[key]) {
+                correct = true;
+            } else {
+                correct = false;
+            }
+        }
+        return correct;
+    });
+}
 
 
 
@@ -86,7 +102,17 @@ const students = [{
 // Input: 5, {}, students
 // Output: null
 
-function findByIdAndUpdate(id, updatedVals, collection) {}
+function findByIdAndUpdate(id, updatedVals, collection) {
+    let keys = Object.keys(updatedVals)
+    let arr = collection.filter((obj) => obj['id'] == id).map((obj) => {
+        for (key in keys) {
+            if (obj.hasOwnProperty(key)) {
+                obj[key] = updatedVals[key];
+            }
+        }
+    })
+    return arr.length > 0 ? arr[0] : null;
+}
 
 // Object.hasOwnProperty
 // Object.keys(instance)

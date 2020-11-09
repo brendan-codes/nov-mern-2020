@@ -26,8 +26,51 @@ const output = [
 // Object.keys(instance)
 // functional (.map .filter)
 
-function findObjectsFilter(search, items) {}
+function findObjectsFilter(search, items) {
+    //Search data for key word(search)
+    for(let i=0; i < items.length; i++){
+        if (search.hasOwnProperty(items[i])){
+            console.log("Item:" + items[i] + "has been found!!");
+        }
 
+    }
+   // print found data
+    console.log(items[i]);
+    //return said data
+    return items[i];
+
+}
+
+//call findobjectsfilter()
+findObjectsFilter("Bob", items)
+
+
+//josh new code
+const items = [
+    { firstName: "Bob", lastName: "Bobbert", age: 31 },
+    { firstName: "John", lastName: "Smith", age: 25 },
+    { firstName: "Bob", lastName: "Smith", age: 27 },
+    { firstName: "Bob", lastName: "White", age: 31 }
+];
+
+function findObjectsFilter(search, items) {
+    //Search data for key word(search)
+    for(var i=0; i < items.length; i++){
+        console.log(items[i]);
+        if (search.hasOwnProperty(items[i])){
+            console.log("Item:" + items[i] + "has been found!!");
+        }
+
+       // print found data
+    console.log(items[i]);
+    //return said data
+    }
+    return items;
+
+}
+
+//call findobjectsfilter()
+findObjectsFilter("Bob", 31);
 
 
 
