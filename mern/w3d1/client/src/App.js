@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import Main from './components/Main';
 
 function App() {
   const [message, setMessage] = useState("...loading!");
@@ -16,16 +17,7 @@ function App() {
   }, []);
   return (
     <div>
-      {message}
-      <div>{
-        products.map((value, index) =>
-          <div key={index}>
-            <p>id: {value._id}</p>
-            <p>This is a {value.name} for {value.price}</p>
-          </div>
-
-        )}
-      </div>
+      <Main />
     </div>
   );
 }
