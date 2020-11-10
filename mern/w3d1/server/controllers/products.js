@@ -32,6 +32,26 @@ module.exports.deleteProduct = (req, res) => {
         });
 }
 
+module.exports.findById = (req, res) => {
+    Product.findById(req.params.id)
+        .then(product => {
+            res.json(product);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        })
+}
+
+module.exports.editById = (req, res) => {
+    Product.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+        .then(product => {
+            res.json(product);
+        })
+        .catch(err => {
+            res.status(400).json(err);
+        })
+}
+
 // create
 
 // read

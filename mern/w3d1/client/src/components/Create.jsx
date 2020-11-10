@@ -8,7 +8,7 @@ const Create = ({addProduct}) => {
     const [name,  setName] = useState("");
     const [price,  setPrice] = useState(0);
 
-    const [errors, setSerrors] = useState([]);
+    const [errors, setErrors] = useState([]);
 
     const formHandler = (e) => {
         e.preventDefault();
@@ -25,8 +25,19 @@ const Create = ({addProduct}) => {
                 navigate("/");
             })
             .catch(err => {
-                console.log(err);
-                console.log(err.response);
+
+
+                const errs = err.response.data.errors;
+
+                const keys = Object.keys(errs);
+                const newErrors = [];
+
+                for(let error of keys) {
+                    newErrors.push(errs[error].message)
+                }
+
+                console.log(newErrors);
+                setErrors(newErrors);
             })
     }
 
@@ -34,6 +45,11 @@ const Create = ({addProduct}) => {
         <div>
             <Link to={"/"}>All products!</Link>
             <p>Create!</p>
+            {
+                errors.map((val, i) =>
+                    <p key={i}>{val}</p>
+                )
+            }
             <form onSubmit={formHandler}>
                 <p>Name:</p>
                 <input
