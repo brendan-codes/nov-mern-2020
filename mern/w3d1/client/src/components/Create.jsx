@@ -14,19 +14,14 @@ const Create = ({addProduct}) => {
         e.preventDefault();
 
         // submit new product
-        console.log(name);
-        console.log(price);
-
         const product = {name: name, price: price};
 
         axios.post("http://localhost:9998/products", product)
-            .then(res => {
+            .then(res => { // success!
                 addProduct(res.data);
                 navigate("/");
             })
-            .catch(err => {
-
-
+            .catch(err => { // failure :(
                 const errs = err.response.data.errors;
 
                 const keys = Object.keys(errs);
