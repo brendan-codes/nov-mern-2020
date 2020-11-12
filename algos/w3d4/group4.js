@@ -63,6 +63,7 @@ function webMD(ailments, meds) {
         // console.log(meds[i].treatableSymptoms)
         for(var j = 0; j < med.length;j++){
             if(med.includes(ailments)){
+                // if(med[j] == ailments)== this one is the same as includes jus to let you guys know
             arr.push(meds[i].name)
             break
         }
