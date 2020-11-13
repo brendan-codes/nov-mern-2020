@@ -3,7 +3,6 @@ import { Router } from '@reach/router';
 import List  from './List';
 import Display  from './Display';
 import Create  from './Create';
-// import Edit from './Edit';
 import axios from 'axios';
 
 
