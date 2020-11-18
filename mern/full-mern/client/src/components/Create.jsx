@@ -17,18 +17,35 @@ const Create = ({addShoes}) => {
         event.preventDefault();
         const newShoes = {name: name, size: size,color: color, brand: brand};
 
-        axios.post("http://localhost:8008/shoes", newShoes)
-            .then(res => {
-                console.log(res);
-                addShoes(res.data);
-                navigate("/");
-            })
-            .catch(err => {
-                console.log(err.response.data);
+        let formErrors = false;
+        let messageErrors = [];
 
-                const { errors } = err.response.data;
-                setErrorMessages(Object.keys(errors).map(error => errors[error].message));
-            })
+        if(name.length < 2){
+            formErrors = true;
+            messageErrors.push("Name is too short!")
+        }
+
+        if(name.length > 8){
+            formErrors = true;
+            messageErrors.push("Name is too long!")
+        }
+
+        if(!formErrors){
+            axios.post("http://localhost:8008/shoes", newShoes)
+                .then(res => {
+                    console.log(res);
+                    addShoes(res.data);
+                    navigate("/");
+                })
+                .catch(err => {
+                    console.log(err.response.data);
+
+                    const { errors } = err.response.data;
+                    setErrorMessages(Object.keys(errors).map(error => errors[error].message));
+                })
+        }else{
+            // show errors
+        }
     }
 
     return (

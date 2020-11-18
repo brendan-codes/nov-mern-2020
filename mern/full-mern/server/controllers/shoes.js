@@ -3,12 +3,20 @@ const Shoes = mongoose.model("Shoes");
 
 module.exports = {
     create: (req, res) => {
+
+        Shoes.find({position: "Captain"})
+            .then(shoes => {
+                if(shoesContainsBrand(shoes)){
+
+                }
+            })
+
         Shoes.create(req.body)
             .then(shoes => res.json(shoes))
             .catch(err => res.status(400).json(err));
     },
     findAll: (req, res) => {
-        Shoes.find()
+        Shoes.find().sort({name: 1})
             .then(shoes => res.json(shoes))
             .catch(err => res.status(400).json(err));
     },
